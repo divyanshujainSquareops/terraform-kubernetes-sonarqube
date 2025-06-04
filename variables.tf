@@ -9,6 +9,7 @@ variable "sonarqube_config" {
     grafana_monitoring_enabled     = false
     postgresql_password_external   = ""
     postgresql_external_server_url = ""
+    updateExistingSonarqube        = false
   }
   description = "Specify the configuration settings for Sonarqube, including the hostname, storage options, and custom YAML values."
 }
@@ -18,6 +19,7 @@ variable "chart_version" {
   default     = "2025.2.0"
   description = "Version of the Jenkins chart that will be used to deploy Jenkins application."
 }
+
 
 variable "namespace" {
   type        = string
