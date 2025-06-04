@@ -2,13 +2,13 @@ output "sonarqube" {
   description = "Sonarqube Credentials "
   value = {
     username = "admin",
-    password = nonsensitive(random_password.sonarqube_password.result),
+    password = nonsensitive(local.effective_sonarqube_password),
     url      = var.sonarqube_config.hostname
   }
 }
 
 output "sonarqube_postgresql_password" {
-  value       = random_password.postgresql_password.result
+  value       = nonsensitive(local.effective_postgresql_password)
   description = "Password for the PostgreSQL database deployed with SonarQube"
   sensitive   = true
 }
