@@ -11,11 +11,7 @@ locals {
 
 module "sonarqube" {
   source  = "squareops/sonarqube/kubernetes"
-<<<<<<< HEAD
   version = "3.1.1"
-=======
-  version = "3.1.0"
->>>>>>> 2d71186b50e076f45ab7e6a587037b5bb0c435ff
   sonarqube_config = {
     hostname                       = "sonarqube.squareops.in"
     values_yaml                    = file("./helm/values.yaml")
@@ -23,13 +19,7 @@ module "sonarqube" {
     sonarqube_volume_size          = "5Gi"
     postgresql_volume_size         = "10Gi"
     grafana_monitoring_enabled     = false
-<<<<<<< HEAD
     monitoringPasscode             = ""
-=======
-    monitoringPasscode             = "xxxxxxx"
-    sonarqube_current_password     = "xxxxxxx"     # if you upgrade sonarqube then you have to provide your previous sonarqube password ##Secret name=sonarqube-postgresql
-    postgresql_current_password    = "xxxxxxxxxxx" # if you upgrade sonarqube then you have to provide your previous postgresql password ##Secret name=sonarqube-sonarqube-admin-password
->>>>>>> 2d71186b50e076f45ab7e6a587037b5bb0c435ff
     postgresql_password_external   = ""
     postgresql_external_server_url = ""
     sonarqube_password             = ""
